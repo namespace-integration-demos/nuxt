@@ -8,5 +8,7 @@ COPY . /app
 
 WORKDIR /app
 
+RUN pnpm install
+
 # Requires https://github.com/nuxt/nuxt/releases/tag/v3.13.1
 RUN --mount=type=cache,target=/nuxt-cache,sharing=locked pnpm run build
