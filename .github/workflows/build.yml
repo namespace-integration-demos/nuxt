@@ -14,11 +14,6 @@ permissions: {}
 
 jobs:
   build:
-    strategy:
-      matrix:
-        dir:
-          - examples/ui/tailwindcss
-
     runs-on: nscloud
 
     steps:
@@ -26,6 +21,7 @@ jobs:
       - run: corepack enable
 
       - name: Build with Namespace Remote Builders
-        working-directory: ${{ matrix.dir }}
-        run: |
-          docker build .
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
