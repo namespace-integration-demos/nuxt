@@ -14,12 +14,6 @@ permissions: {}
 
 jobs:
   build:
-    strategy:
-      matrix:
-        dir:
-          - examples/ui/tailwindcss
-          - examples/experimental/wasm
-
     runs-on: nscloud
 
     steps:
@@ -31,5 +25,3 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          build-args: |
-            DIR=${{ matrix.dir }}
