@@ -8,6 +8,8 @@ RUN corepack enable
 
 COPY . .
 
+RUN pnpm install
+
 WORKDIR ${DIR}
 
 RUN pnpm install
