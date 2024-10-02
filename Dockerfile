@@ -6,11 +6,12 @@ RUN corepack enable
 
 COPY . .
 
-RUN pnpm install
+RUN pnpm -r install
+
+RUN pnpm run build
 
 # Requires https://github.com/nuxt/nuxt/releases/tag/v3.13.1
 # Copy dance to not wipe node_modules
-RUN pnpm run build
 
 # RUN --mount=type=cache,target=/nuxt-cache,sharing=locked mkdir -p /node_modules/.cache/nuxt/builds \
 #     && cp -rf /nuxt-cache /node_modules/.cache/nuxt/builds \
