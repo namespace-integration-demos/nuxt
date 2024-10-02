@@ -1,4 +1,4 @@
-FROM docker.io/library/node:20.11.0-alpine@sha256:2f46fd49c767554c089a5eb219115313b72748d8f62f5eccb58ef52bc36db4ad
+FROM docker.io/library/node:22.9-slim
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
@@ -6,7 +6,11 @@ RUN corepack enable
 
 COPY . .
 
-RUN pnpm -r install && ls -al /examples/advanced/error-handling
+RUN pnpm -r install
+
+RUN ls -al
+
+RUN ls -al /examples/ui/daisyui
 
 RUN pnpm run build
 
