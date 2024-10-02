@@ -1,8 +1,8 @@
 export default defineNuxtConfig({
-  modules: ["@nuxt/ui"],
+  modules: ['@nuxt/ui'],
 
   ui: {
-    icons: ["simple-icons"],
+    icons: ['simple-icons'],
   },
 
   tailwindcss: {
@@ -14,4 +14,4 @@ export default defineNuxtConfig({
   experimental: {
     buildCache: true,
   },
-});
+})
