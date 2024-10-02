@@ -6,7 +6,7 @@ RUN corepack enable
 
 COPY . .
 
-RUN pnpm -r install
+RUN pnpm -r install && ls -al /examples/advanced/error-handling
 
 RUN pnpm run build
 
