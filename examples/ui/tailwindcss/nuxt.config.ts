@@ -8,4 +8,10 @@ export default defineNuxtConfig({
     // Expose tailwind config with #tailwind-config
     exposeConfig: true,
   },
+
+  // Enable build caching https://nuxt.com/docs/guide/going-further/experimental-features#buildcache
+  // Cache contents live at <workspace>/node_modules/.cache/nuxt/builds
+  experimental: {
+    buildCache: true,
+  },
 })

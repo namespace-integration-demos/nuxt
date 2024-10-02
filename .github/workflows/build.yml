@@ -18,6 +18,7 @@ jobs:
       matrix:
         dir:
           - examples/ui/tailwindcss
+          - examples/experimental/wasm
 
     runs-on: nscloud
 
@@ -26,6 +27,9 @@ jobs:
       - run: corepack enable
 
       - name: Build with Namespace Remote Builders
-        working-directory: ${{ matrix.dir }}
-        run: |
-          docker build .
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          build-args: |
+            DIR=${{ matrix.dir }}
